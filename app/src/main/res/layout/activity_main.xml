@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/grid" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Units of Length" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_convert_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Weight" />
+
+        <Button
+            android:id="@+id/button_convert_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Temp" />
+
+        <Button
+            android:id="@+id/button_convert_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time" />
+
+    </LinearLayout>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/radiobutton_from_imperial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imperial to Metric" />
+
+
+    <RadioButton
+        android:id="@+id/radiobutton_from_metric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Metric to Imperial" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radiobutton_inches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inches" />
+
+
+        <RadioButton
+            android:id="@+id/radiobutton_feet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feet" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_miles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Miles" />
+
+    </RadioGroup>
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radiobutton_centimeters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Centimeters" />
+
+
+        <RadioButton
+            android:id="@+id/radiobutton_meters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meters" />
+
+        <RadioButton
+            android:id="@+id/radiobutton_kilometers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kilometers" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edit_text_input_length"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:hint="Input to convert"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/button_calculate_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Calculate" />
+
+        <TextView
+            android:id="@+id/text_view_result_length"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="Awaiting input..."
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
