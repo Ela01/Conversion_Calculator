@@ -1,16 +1,12 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,66 +53,133 @@ public class MainActivity extends AppCompatActivity {
         kilometersButton = findViewById(R.id.radiobutton_kilometers);
         metersButton = findViewById(R.id.radiobutton_meters);
         feetButton = findViewById(R.id.radiobutton_feet);
-        //should be called 'viewText' or 'resultViewText' or resultText
+
     }
 
     private void setupButtonClickListeners() {
 
-        calculateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String inchesStrText = lengthEditText.getText().toString();
+        calculateButton.setOnClickListener(v -> {
+            boolean allInputsChecked = checkForAllInputs();
 
-                if (inchesStrText.isEmpty()) {
+            if (!allInputsChecked) {
 
-                    String alertText = "Please enter a value";
+                String alertText = "Please enter a value";
 
-                    Toast.makeText(MainActivity.this, alertText, Toast.LENGTH_LONG).show();
-                }
-                else {
-                    //double result = convertToMeters(inchesStrText);
-                    //displayResult(result);
-                }
-
+                Toast.makeText(MainActivity.this, alertText, Toast.LENGTH_LONG).show();
+            } else {
+                double result = calculateConversions();
+                displayResult(result);
             }
+
         });
     }
-    private boolean checkForMissingInputs(){
-        if (imperialToMetric.isChecked()||metricToImperial.isChecked()){
-            if (inchesButton.isChecked()||feetButton.isChecked()||milesButton.isChecked()){
-                return centimetersButton.isChecked() || metersButton.isChecked() || kilometersButton.isChecked();
-            }
+
+    private boolean checkForAllInputs() {
+        if ((imperialToMetric.isChecked() || metricToImperial.isChecked()) && !lengthEditText.getText().toString().isEmpty() &&
+                (inchesButton.isChecked() || feetButton.isChecked() || milesButton.isChecked())) {
+            return centimetersButton.isChecked() || metersButton.isChecked() || kilometersButton.isChecked();
         }
         return false;
     }
-//    private boolean checkIfImperialToMetric(){
-//        return imperialToMetric.isChecked();
-//    }
 
-    private void displayResult(double result) {
-        DecimalFormat myFormatter = new DecimalFormat("0.00");
-        String resultString = myFormatter.format(result);
-        //resultViewText.setText(resultString + "meters");
+
+
+
+    //in to cm, in to m, in to km
+    //feet to cm, ft to m, ft to km
+    //mi to cm, mi to m, mi to km
+    /* if in = true
+     * */
+
+
+    private double calculateConversions() {
+        String inputString = lengthEditText.getText().toString();
+        double inputDouble = Double.parseDouble(inputString);
+
+        if (imperialToMetric.isChecked()) {
+            if (inchesButton.isChecked()) {
+                if (centimetersButton.isChecked()) { //in to cm
+                    return inputDouble * 2.54;
+                } else if (metersButton.isChecked()) { //in to m
+                    return inputDouble * 0.0254;
+                } else { //in to km
+                    return inputDouble / 393.70;
+                }
+            } else if (feetButton.isChecked()) {
+                if (centimetersButton.isChecked()) {
+                    return inputDouble * 30.48;
+                } else if (metersButton.isChecked()) {
+                    return inputDouble * 0.3048;
+                } else {
+                    return inputDouble * 0.0003048;
+                }
+            } else {
+                if (centimetersButton.isChecked()) {
+                    return inputDouble * 160934.4;
+                } else if (metersButton.isChecked()) {
+                    return inputDouble * 1609.344;
+                } else {
+                    return inputDouble * 1.60934;
+                }
+            }
+        } else {
+            if (inchesButton.isChecked()) {
+                if (centimetersButton.isChecked()) {
+                    return inputDouble * 15;
+                } else if (metersButton.isChecked()) {
+                    return inputDouble * 15;
+                } else {
+                    return inputDouble * 15;
+                }
+            } else if (feetButton.isChecked()) {
+                if (centimetersButton.isChecked()) {
+                    return inputDouble * 15;
+                } else if (metersButton.isChecked()) {
+                    return inputDouble * 15;
+                } else {
+                    return inputDouble * 15;
+                }
+            } else {
+                if (centimetersButton.isChecked()) {
+                    return inputDouble * 15;
+                } else if (metersButton.isChecked()) {
+                    return inputDouble * 15;
+                } else {
+                    return inputDouble * 15;
+                }
+
+            }
+        }
     }
 
-//    private double convertToMeters(String inchesStrText) {
-//        int inches = Integer.parseInt(inchesStrText);
-//        return inches / 39.37;
-//    }
-    //if inches
-    //inches to Cm - Cm to inches
-    //inches to meters - reverse
-    //inches to km - reverse
-
-    //if feet
-    // feet to cm
-    //feet to met
-    //feet to km
-
-    //if miles
-    //miles to cm
-    //miles to met
-    //mi to km
-
-
+    private void displayResult(double result) {
+        DecimalFormat myFormatter = new DecimalFormat("0.000000");//Needs to be customized to values/conversions
+        String resultString = myFormatter.format(result);
+        resultViewText.setText(resultString);
+    }
 }
+//      Find way to restructure private double calculateConversions()
+
+//        Boolean isClicked[] = new Boolean[]{imperialToMetric.isChecked(), metricToImperial.isChecked(),
+//                inchesButton.isChecked(), feetButton.isChecked(), milesButton.isChecked(),
+//                centimetersButton.isChecked(), metersButton.isChecked(), kilometersButton.isChecked(),
+//                !lengthEditText.getText().toString().isEmpty()};
+//                for (int i = 0; i < 8; i++)...
+
+
+//if inches
+//inches to Cm
+//inches to meters
+//inches to km
+
+//if feet
+// feet to cm
+//feet to met
+//feet to km
+
+//if miles
+//miles to cm
+//miles to met
+//mi to km
+
+
