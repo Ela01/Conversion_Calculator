@@ -28,13 +28,12 @@ public class WeightActivity extends AppCompatActivity {
     }
 
     private void findViews() {
+
         convertFromEditText = findViewById(R.id.edit_text_input_convert_from);
         convertToEditText = findViewById(R.id.edit_text_input_convert_to);
         convertWeightButton = findViewById(R.id.button_convert_weight);
         convertAmountEditText = findViewById(R.id.edit_text_input_convert_amount);
         resultViewTextWeight = findViewById(R.id.text_view_result_weight);
-
-
     }
 
     private void setupButtonClickListeners() {
@@ -42,7 +41,7 @@ public class WeightActivity extends AppCompatActivity {
         convertWeightButton.setOnClickListener(v -> {
             boolean inputsChecked = checkMissingInput();
 
-            if (!inputsChecked) {
+            if (inputsChecked) {
 
                 String alertText = "Please enter a value or a number corresponding to the available indexes above";
 
@@ -56,21 +55,29 @@ public class WeightActivity extends AppCompatActivity {
         });
     }
 
+    /// checkMissingInput() --> code breaks when first index is out of range and last index is missing
     private boolean checkMissingInput() {
         String convertFrom = convertFromEditText.getText().toString();
         String convertTo = convertToEditText.getText().toString();
-        //boolean indexOutOfRange; <- do a separate function below/above (check what works)
-        //if (calculateConversions() == 1.2345){
+        int convertFromOutOfRange = Integer.parseInt(convertFrom);
+        int convertToOutOfRange = Integer.parseInt(convertTo);
+        String convertAmount = convertAmountEditText.getText().toString();
+        boolean indexOutOfRange = true;
 
-
-        return !convertFrom.isEmpty() || !convertTo.isEmpty();
+        if ((convertFromOutOfRange < 10 && convertFromOutOfRange > 0) && (convertToOutOfRange < 10 && convertToOutOfRange > 0)) {
+            //returns false only if all variables are entered
+            // if even one variable is missing then the function returns true
+            return convertFrom.isEmpty() || convertTo.isEmpty() || convertAmount.isEmpty();
+        } else {
+            return indexOutOfRange;
+        }
     }
 
     private double calculateConversions() {
 
         String stringUnitFrom = convertFromEditText.getText().toString();
         String stringUnitTo = convertToEditText.getText().toString();
-        String stringConvertAmount = convertAmountEditText.getText().toString();
+        //String stringConvertAmount = convertAmountEditText.getText().toString();
         int intUnitFrom = Integer.parseInt(stringUnitFrom);
         int intUnitTo = Integer.parseInt(stringUnitTo);
         //double doubleConvertAmount = Double.parseDouble(stringConvertAmount);
@@ -206,7 +213,7 @@ public class WeightActivity extends AppCompatActivity {
     }
 
     private void displayResult(double result) {
-        DecimalFormat myFormatter = new DecimalFormat("0.0000");//Needs to be customized to values/conversions
+        DecimalFormat myFormatter = new DecimalFormat("0.00");
         String resultString = myFormatter.format(result);
         resultViewTextWeight.setText(resultString);
     }
