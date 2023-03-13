@@ -4,157 +4,211 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="32sp">
 
     <ImageView
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:src="@drawable/grid" />
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="Units of Length" />
-
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radiobutton_from_imperial_weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Imperial to Metric" />
-
-
-        <RadioButton
-            android:id="@+id/radiobutton_from_metric_weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Metric to Imperial" />
-    </RadioGroup>
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radiobutton_ounces"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ounces (oz)" />
-
-
-        <RadioButton
-            android:id="@+id/radiobutton_pounds"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pounds (lbs)" />
-
-        <RadioButton
-            android:id="@+id/radiobutton_tons_us"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tons (US)" />
-
-
-    </RadioGroup>
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radiobutton_tons_uk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tons (UK)" />
-    </RadioGroup>
-
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radiobutton_grams"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Grams (g)" />
-
-
-        <RadioButton
-            android:id="@+id/radiobutton_kilograms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kilograms (kg)" />
-
-        <RadioButton
-            android:id="@+id/radiobutton_milligrams"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Milligrams (mg)" />
-
-    </RadioGroup>
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-    <RadioButton
-        android:id="@+id/radiobutton_micrograms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Micrograms (mcg)" />
-    </RadioGroup>
-
+        android:layout_marginBottom="16dp"
+        android:fontFamily="monospace"
+        android:text="Units of Weight"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+        android:textSize="16sp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+
         android:orientation="vertical"
-        android:padding="8dp">
-
-        <EditText
-            android:id="@+id/edit_text_input_length"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_margin="8dp"
-            android:hint="Input to convert"
-            android:inputType="numberDecimal" />
-
-        <Button
-            android:id="@+id/button_calculate_length"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Calculate" />
+        android:paddingLeft="16dp">
 
         <TextView
-            android:id="@+id/text_view_result_weight"
-            android:layout_width="match_parent"
+
+            android:id="@+id/text_view_ounces"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Awaiting input..."
-            android:textAlignment="center" />
+            android:fontFamily="monospace"
+            android:text="1 -- Ounces (oz)"
+            android:textColor="#FF5722"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+
+        <TextView
+
+            android:id="@+id/text_view_pounds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="2 -- Pounds (lbs)"
+            android:textColor="#F44336"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+        <TextView
+
+            android:id="@+id/text_view_tons_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="3 -- Tons (US)"
+            android:textColor="#FF5722"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+
+        <TextView
+
+            android:id="@+id/text_view_tons_uk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="4 -- Tons (UK)"
+            android:textColor="#3044B6"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+        <TextView
+
+            android:id="@+id/text_view_stones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="5 -- Stones (UK)"
+            android:textColor="#586DE4"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+
+        <TextView
+            android:id="@+id/text_view_milligrams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="6 -- Milligrams (mg)"
+            android:textColor="#4CAF50"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+        <TextView
+            android:id="@+id/text_view_micrograms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="7 -- Micrograms (μg)"
+            android:textColor="#3A8709"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+        <TextView
+            android:id="@+id/text_view_grams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="8 -- Grams (g)"
+            android:textColor="#3A8709"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+
+        <TextView
+            android:id="@+id/text_view_kilograms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="9 -- Kilograms (kg)"
+            android:textColor="#4CAF50"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="monospace"
+
+        android:text="Please enter the number of the corresponding units you would like to convert"
+        android:textAlignment="center"
+        android:textSize="12sp" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/edit_text_input_convert_from"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="monospace"
+            android:hint="(unit 1-9)"
+            android:inputType="number"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/edit_text_input_convert_amount"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:fontFamily="monospace"
+            android:hint="5.12"
+            android:textAlignment="center"
+            android:inputType="numberDecimal"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="monospace"
+            android:hint="  ->  "
+            android:inputType="number"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/edit_text_input_convert_to"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+
+            android:fontFamily="monospace"
+            android:hint="(unit 1-9)"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_convert_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="monospace"
+        android:shadowColor="@color/black"
+        android:text="Convert"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+    <TextView
+        android:id="@+id/text_view_result_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="monospace"
+        android:text="Awaiting input..."
+        android:textAlignment="center" />
 
 </LinearLayout>
+
+
