@@ -51,11 +51,9 @@ public class WeightActivity extends AppCompatActivity {
                 double convertedResult = calculateResult();
                 displayResult(convertedResult);
             }
-
         });
     }
 
-    /// checkMissingInput() --> code breaks when first index is out of range and last index is missing
     private boolean checkMissingInput() {
         String convertFrom = convertFromEditText.getText().toString();
         String convertTo = convertToEditText.getText().toString();
@@ -196,11 +194,9 @@ public class WeightActivity extends AppCompatActivity {
 
                     return factorMatrixArray[intUnitFrom - 1][intUnitTo - 1];
                 }
-
             }
         }
         return 1.2345;
-
     }
 
     private double calculateResult() {
@@ -217,10 +213,6 @@ public class WeightActivity extends AppCompatActivity {
         String resultString = myFormatter.format(result);
         resultViewTextWeight.setText(resultString);
     }
-
 }
-/*
 
-
- */
 
