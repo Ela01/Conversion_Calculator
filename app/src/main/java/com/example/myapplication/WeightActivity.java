@@ -196,7 +196,7 @@ public class WeightActivity extends AppCompatActivity {
                 }
             }
         }
-        return 1.2345;
+        return 0.00;
     }
 
     private double calculateResult() {
