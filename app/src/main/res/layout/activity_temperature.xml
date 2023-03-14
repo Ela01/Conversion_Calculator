@@ -1,9 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TemperatureActivity">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="32sp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/temperature" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+
+            android:id="@+id/text_view_kelvin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="1 >> Kelvin (°K)"
+            android:textSize="20dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="#2F8816"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+
+        <TextView
+
+            android:id="@+id/text_view_farenheit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="2 > Farenheit (°F)"
+            android:layout_marginBottom="8dp"
+
+            android:textSize="20dp"
+
+            android:textColor="#1C5316"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+        <TextView
+
+            android:id="@+id/text_view_Rankine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="3 >> Rankine (°R)"
+            android:layout_marginBottom="8dp"
+
+            android:textSize="20dp"
+
+            android:textColor="#278F32"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+
+        <TextView
+
+            android:id="@+id/text_view_réaumur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="4 > Réaumur (°r)"
+            android:layout_marginBottom="8dp"
+
+            android:textSize="20dp"
+
+            android:textColor="#356735"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+        <TextView
+
+            android:id="@+id/text_view_celsius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="5 >> Celsius (°C)"
+            android:textSize="20dp"
+
+            android:textColor="#2E8125"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Please enter the number of the corresponding metric you would like to convert"
+        android:textAlignment="center"
+        android:textSize="12sp" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/edit_text_input_convert_from"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:hint="(unit 1-9)"
+            android:inputType="number"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="12sp" />
+
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+
+            android:fontFamily="monospace"
+            android:inputType="number"
+            android:padding="16dp"
+            android:src="@drawable/arrow"
+            android:textAlignment="center"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/edit_text_input_convert_to"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+
+            android:fontFamily="sans-serif-condensed-medium"
+            android:hint="(unit 1-9)"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_text_input_convert_amount"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:hint="amount"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/button_convert_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:shadowColor="@color/black"
+        android:text="Convert"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+    <TextView
+        android:id="@+id/text_view_result_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Awaiting input..."
+        android:textAlignment="center" />
+
+</LinearLayout>
