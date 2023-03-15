@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="sans-serif-light"
             android:text="1 >> Kelvin (°K)"
             android:textColor="#2F8816"
             android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="sans-serif-light"
             android:text="2 > Farenheit (°F)"
 
             android:textColor="#1C5316"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="sans-serif-light"
             android:text="3 >> Rankine (°R)"
 
             android:textColor="#278F32"
@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="sans-serif-light"
             android:text="4 > Réaumur (°r)"
 
             android:textColor="#356735"
@@ -80,7 +80,7 @@
             android:id="@+id/text_view_celsius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="sans-serif-light"
             android:text="5 >> Celsius (°C)"
             android:textColor="#2E8125"
 

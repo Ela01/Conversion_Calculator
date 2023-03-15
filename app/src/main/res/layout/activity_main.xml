@@ -7,20 +7,17 @@
     android:padding="24dp">
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:src="@drawable/grid" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/length" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="Units of Length" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
