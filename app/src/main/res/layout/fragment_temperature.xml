@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="32sp">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/temperature" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:id="@+id/text_view_kelvin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="1 >> Kelvin (°K)"
+            android:textColor="#2F8816"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="20dp" />
+
+
+        <TextView
+
+            android:id="@+id/text_view_farenheit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="2 > Farenheit (°F)"
+
+            android:textColor="#1C5316"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+
+            android:textSize="20dp" />
+
+        <TextView
+
+            android:id="@+id/text_view_Rankine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="3 >> Rankine (°R)"
+
+            android:textColor="#278F32"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="20dp" />
+
+
+        <TextView
+
+            android:id="@+id/text_view_reaumur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="4 > Réaumur (°r)"
+
+            android:textColor="#356735"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+
+            android:textSize="20dp" />
+
+        <TextView
+
+            android:id="@+id/text_view_celsius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="5 >> Celsius (°C)"
+            android:textColor="#2E8125"
+
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+            android:textSize="20dp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Please enter the number of the corresponding metric you would like to convert"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/edit_text_input_convert_from_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="sans-serif-light"
+            android:hint="(unit 1-9)"
+            android:inputType="number"
+            android:textAlignment="center"
+
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+
+            android:fontFamily="monospace"
+            android:inputType="number"
+            android:padding="16dp"
+            android:src="@drawable/arrow"
+            android:textAlignment="center"
+
+            android:textSize="16sp" />
+
+
+        <EditText
+            android:id="@+id/edit_text_input_convert_to_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+
+            android:fontFamily="sans-serif-light"
+            android:hint="(unit 1-9)"
+            android:inputType="number"
+            android:textAlignment="center"
+
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_text_input_convert_amount_temp"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif-light"
+        android:hint="amount"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button_convert_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-light"
+        android:shadowColor="@color/black"
+        android:text="Convert"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum" />
+
+    <TextView
+        android:id="@+id/text_view_result_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-light"
+        android:text="..."
+        android:textAlignment="center"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+        android:textSize="20sp" />
+
+</LinearLayout>
